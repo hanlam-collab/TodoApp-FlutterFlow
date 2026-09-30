@@ -476,7 +476,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                               onFieldSubmitted: (_) async {
                                 await currentUserReference!
                                     .update(createUsersRecordData(
-                                  goal: _model.goalTextfieldTextController.text,
+                                  goal: valueOrDefault<String>(
+                                    _model.goalTextfieldTextController.text,
+                                    'Succeed at things',
+                                  ),
                                 ));
                               },
                               autofocus: false,
